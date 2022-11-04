@@ -12,3 +12,9 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const liPhotosEl = images.reduce((acc, card) => acc + `<li><img src="${card.url}" alt="${card.alt}"></img></li>`, '');
+
+const galleryList = document.querySelector('.gallery');
+
+galleryList.insertAdjacentHTML('beforeend', liPhotosEl);
