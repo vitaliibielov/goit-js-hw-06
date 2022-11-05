@@ -13,19 +13,13 @@ let qnt = 0;
 let defSize = 30;
 
 
-const qntBoxes = event => qnt = event.target.value >= 1 && event.target.value <= 100 ? +event.target.value : 0;
+const qntBoxes = event => qnt = event.target.value >= 1 && event.target.value <= 100 && event.target.value !== '' ? +event.target.value : alert('Будь ласка введіть число від 1 до 100');
 inputValueEl.addEventListener('input', qntBoxes)
 
 
 const createBoxes = () => {
-
-  // const qntBoxes = event => event.target.value === NaN ? alert('Введіть число') : qnt = +event.target.value;
-  // console.log(qnt)
-
-  // inputValueEl.addEventListener('input', qntBoxes)
   
   const divArr = [];
-
   for (let i = 0; i < qnt; i++) {
 
     // const box = document.createElement('div')
@@ -35,14 +29,11 @@ const createBoxes = () => {
     // box.style.backgroundColor = getRandomHexColor();
     // boxesList.append(box);
 
-    // const box = `<div style="width: ${defSize}px; heigth: ${defSize}px; background-color: ${getRandomHexColor()};"></div>`
-    const box = `<div width: ${defSize}px; heigth: ${defSize}px; background-color: ${getRandomHexColor()}></div>`
+    const box = `<div style="width: ${defSize}px; height: ${defSize}px; background-color: ${getRandomHexColor()};"></div>`
     divArr.push(box)
     defSize += 10;
   }
-  console.log(divArr)
   boxesList.insertAdjacentHTML('beforeend', divArr.join(''));
-
 }
 
 const removeBoxes = () => {
