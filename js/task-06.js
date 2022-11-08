@@ -3,7 +3,8 @@ const inputEl = document.querySelector('#validation-input');
 
 
 const checkSymbQnt = event => {
-    inputEl.classList.remove('valid' && 'invalid');
+    inputEl.classList.remove('valid');
+    inputEl.classList.remove('invalid');
     inputEl.classList.add(+event.target.value.length === +inputEl.dataset.length ? 'valid' : 'invalid');
 }
 
