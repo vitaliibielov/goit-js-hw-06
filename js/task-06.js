@@ -3,7 +3,7 @@ const inputEl = document.querySelector('#validation-input');
 
 
 const checkSymbQnt = event => {
-    inputEl.classList.add(event.target.value.length >= inputEl.dataset.length ? 'valid' : 'invalid');
+    inputEl.classList.add(+event.target.value.length === +inputEl.dataset.length ? 'valid' : 'invalid');
 }
 
 const onFocusInput = () => {

@@ -13,7 +13,16 @@ let qnt = 0;
 let defSize = 30;
 
 
-const qntBoxes = event => qnt = event.target.value >= 1 && event.target.value <= 100 && event.target.value !== '' ? +event.target.value : alert('Будь ласка введіть число від 1 до 100');
+const qntBoxes = event => {
+  // qnt = event.target.value >= 1 && event.target.value <= 100 && event.target.value !== '' ? +event.target.value : alert('Будь ласка введіть число від 1 до 100');
+
+  if (event.target.value >= 1 && event.target.value <= 100 && event.target.value !== '') {
+    qnt = +event.target.value;
+  } else {
+    qnt = alert('Будь ласка введіть число від 1 до 100');
+  }
+}
+
 inputValueEl.addEventListener('input', qntBoxes)
 
 
